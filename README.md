@@ -5,3 +5,10 @@ Docker's production TUF repository generated using [TUF-on-CI](https://github.co
 ## Signing Ceremony
 
 The process used to establish Docker's production TUF root is documented in [CEREMONY.md](./ceremony/CEREMONY.md)
+
+## Keys
+
+| Keyholder                         | Role              | Serial number  |
+| --------------------------------- | ----------------- | -------------- |
+| Laurent Goderre (@LaurentGoderre) | Software Engineer | 25515985
+
