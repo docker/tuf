@@ -8,7 +8,8 @@ The process used to establish Docker's production TUF root is documented in [CER
 
 ## Keys
 
-| Keyholder                         | Role              | Serial number  |
-| --------------------------------- | ----------------- | -------------- |
-| Laurent Goderre (@LaurentGoderre) | Software Engineer | 25515985
-
+| Keyholder Name                    | Role                    | Serial Number  |
+| --------------------------------- | ----------------------- | -------------- |
+| Jean Laurent (@jeanlaurent)       | Root                    | 28751288       |
+| Laurent Goderre (@LaurentGoderre) | Delegated Targets (DOI) | 25515985       |
+| Joel Kamp (@mrjoelkamp)           | Delegated Targets (DOI) | 25515139       |
