@@ -16,12 +16,12 @@
    yubico-piv-tool --action=attest --slot=9c > ./keys/<serial>/Slot9CAttestation.pem
    ```
 
+## How-to Verify Root Key Attestations
+
 1. Retrieve Yubico PIV CA certificate from Yubico
    ```sh
    curl https://developers.yubico.com/PIV/Introduction/piv-attestation-ca.pem -o piv-attestation-ca.pem
    ```
-
-## How-to Verify Root Key Attestations
 
 1. Build `key-verification` tool
    ```sh

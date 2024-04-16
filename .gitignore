@@ -1,2 +1,3 @@
 .tuf-on-ci-sign.ini
 key-verification
+piv-attestation-ca.pem
