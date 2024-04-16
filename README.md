@@ -13,3 +13,4 @@ The process used to establish Docker's production TUF root is documented in [CER
 | Jean Laurent (@jeanlaurent)       | Root                    | 28751288       |
 | Laurent Goderre (@LaurentGoderre) | Delegated Targets (DOI) | 25515985       |
 | Joel Kamp (@mrjoelkamp)           | Delegated Targets (DOI) | 25515139       |
+| David Dooling (@whalelines)       | Delegated Targets (DOI) | 25515003       |
