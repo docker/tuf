@@ -68,7 +68,8 @@ Before performing the production TUF root signing ceremony, perform a dry-run to
 - Complete the [TUF-on-CI signer setup instructions](https://github.com/theupdateframework/tuf-on-ci/blob/main/docs/SIGNER-SETUP.md)
 - Designate someone to act as root signing lead
     - signing lead collects a comma separated list of all root key holder GitHub handles
-    - Signing lead configures `~/.aws/config` for access to the Docker Image Signing - Production (654654578585) AWS account
+    - signing lead collects a comma separated list of all target key holder GitHub handles
+    - signing lead configures `~/.aws/config` for access to the Docker Image Signing - Production (654654578585) AWS account
 
 ### Procedure
 
@@ -102,12 +103,12 @@ This section is to be completed by the root signing lead only.
      2. Configure expiry: Role expires in 365 days, re-signing starts 60 days before expiry
     Please choose an option or press enter to continue
     ```
-1. When prompted to configure targets select option 1 and paste the list of root key holder GitHub handles
-1. Enter the targets threshold value of `3` and press enter
+1. When prompted to configure targets select option 1 and paste the list of target key holder GitHub handles
+1. Enter the targets threshold value of `2` and press enter
 1. Press enter to continue again using the default settings for target expiration:
     ```sh
     Configuring role targets
-     1. Configure signers: [@mrjoelkamp, @kipz], requiring 3 signatures
+     1. Configure signers: [@mrjoelkamp, @kipz], requiring 2 signatures
      2. Configure expiry: Role expires in 365 days, re-signing starts 60 days before expiry
     Please choose an option or press enter to continue:
     ```
