@@ -1,27 +1,9 @@
-## How-to Generate YubiKey PIV Attestation Certificates
-
-1. Download and install [yubico-piv-tool](https://developers.yubico.com/yubico-piv-tool/Releases/)
-
-1. Create a new directory using your device serial number
-   ```sh
-   mkdir -p ./keys/<serial>
-   ```
-1. Read Yubikey PIV device certificate in slot f9
-   ```sh
-   yubico-piv-tool --action=read-certificate --slot=f9 > ./keys/<serial>/SlotF9Intermediate.pem
-   ```
-
-1. Read PIV attestation certificate for Digital Signature certificate in slot 9c
-   ```sh
-   yubico-piv-tool --action=attest --slot=9c > ./keys/<serial>/Slot9CAttestation.pem
-   ```
+## How-to Verify Root Key Attestations
 
 1. Retrieve Yubico PIV CA certificate from Yubico
    ```sh
    curl https://developers.yubico.com/PIV/Introduction/piv-attestation-ca.pem -o piv-attestation-ca.pem
    ```
-
-## How-to Verify Root Key Attestations
 
 1. Build `key-verification` tool
    ```sh
@@ -47,3 +29,21 @@ SkYytOIwkidZo9Rk2dczbDcFSJvLGsmd
 
 Device attestation verified for: 25516106
 ```
+
+## How-to Generate YubiKey PIV Attestation Certificates
+
+1. Download and install [yubico-piv-tool](https://developers.yubico.com/yubico-piv-tool/Releases/)
+
+1. Create a new directory using your device serial number
+   ```sh
+   mkdir -p ./keys/<serial>
+   ```
+1. Read Yubikey PIV device certificate in slot f9
+   ```sh
+   yubico-piv-tool --action=read-certificate --slot=f9 > ./keys/<serial>/SlotF9Intermediate.pem
+   ```
+
+1. Read PIV attestation certificate for Digital Signature certificate in slot 9c
+   ```sh
+   yubico-piv-tool --action=attest --slot=9c > ./keys/<serial>/Slot9CAttestation.pem
+   ```

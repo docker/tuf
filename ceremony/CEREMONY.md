@@ -30,14 +30,17 @@ This document establishes a procedure for the procurement, provisioning, and sig
 1. Follow the instructions [YUBIKEY-PIV-SETUP.md](https://github.com/theupdateframework/tuf-on-ci/blob/main/docs/YUBIKEY-PIV-SETUP.md) to provision the YubiKey with a PIV signing certificate with the following options:
     1. For `Set Management Key`
         1. Generate the key on the device
+        1. Use the `AES256` algorithm
     1. For `Generate Digital Signature Certificate`
         1. Generate the certificate on the device using the self-signed certificate
         1. For the signing algorithm select `ECCP384`
+        1. For expiration date select one (1) year from today
 1. Generate attestation certificates. This creates a certificate containing your newly created public key signed by Yubico’s built-in (and verifiable) keys. This proves that the Yubikey is genuine, as well as confirming the model, serial number etc.
     1. Download and install `yubico-piv-tool` [https://developers.yubico.com/yubico-piv-tool/Releases/](https://developers.yubico.com/yubico-piv-tool/Releases/)
     1. Create a new directory using your device serial number
         ```sh
-        mkdir ./keys/<serial_num>/
+        mkdir -p ./keys/<serial_num>/
+        cd !$
         ```
     1. Read Yubikey PIV intermediate certificate in slot f9
         ```sh
@@ -65,11 +68,13 @@ Before performing the production TUF root signing ceremony, perform a dry-run to
 - Complete the [TUF-on-CI signer setup instructions](https://github.com/theupdateframework/tuf-on-ci/blob/main/docs/SIGNER-SETUP.md)
 - Designate someone to act as root signing lead
     - signing lead collects a comma separated list of all root key holder GitHub handles
-    - Signing lead configures `~/.aws/config` for access to the Docker Image Signing - Production (654654578585) AWS account
+    - signing lead collects a comma separated list of all target key holder GitHub handles
+    - signing lead configures `~/.aws/config` for access to the Docker Image Signing - Production (654654578585) AWS account
 
 ### Procedure
 
 #### Initialize TUF Repository
+This section is to be completed by the root signing lead only. In other words, root and target signers _do not_ have to execute any of the commands in this section.
 
 1. The lead signs into Docker Image Signing - Production (654654578585) AWS account
 1. The lead initializes the TUF signing ceremony by running the following command:
@@ -98,12 +103,12 @@ Before performing the production TUF root signing ceremony, perform a dry-run to
      2. Configure expiry: Role expires in 365 days, re-signing starts 60 days before expiry
     Please choose an option or press enter to continue
     ```
-1. When prompted to configure targets select option 1 and paste the list of root key holder GitHub handles
-1. Enter the targets threshold value of `3` and press enter
+1. When prompted to configure targets select option 1 and paste the list of target key holder GitHub handles
+1. Enter the targets threshold value of `2` and press enter
 1. Press enter to continue again using the default settings for target expiration:
     ```sh
     Configuring role targets
-     1. Configure signers: [@mrjoelkamp, @kipz], requiring 3 signatures
+     1. Configure signers: [@mrjoelkamp, @kipz], requiring 2 signatures
      2. Configure expiry: Role expires in 365 days, re-signing starts 60 days before expiry
     Please choose an option or press enter to continue:
     ```
@@ -138,8 +143,9 @@ Before performing the production TUF root signing ceremony, perform a dry-run to
 1. Press enter to push changes to origin and initiate TUF repo
 
 #### Keyholder Root Signing
+This section is to be completed by all root key and targets key holders.
 
-1. Each remaining key holder opens the newly created signing event PR [https://github.com/docker/tuf/pulls](https://github.com/docker/tuf/pulls)
+1. Each key holder opens the newly created signing event PR [https://github.com/docker/tuf/pulls](https://github.com/docker/tuf/pulls)
 1. Copy the command to accept invite to join root
     ```sh
     tuf-on-ci-sign sign/init
@@ -171,7 +177,7 @@ Before performing the production TUF root signing ceremony, perform a dry-run to
 
 #### Collect Archival Signing Ceremony Data
 
-1. Create a signing ceremony folder at [https://github.com/docker/tuf](https://github.com/docker/tuf) using the date of the signing ceremony:
+1. Create a signing ceremony folder at [https://github.com/docker/tuf](https://github.com/docker/tuf) using the date of the signing ceremony (if one doesn't exist already):
     ```sh
     mkdir ./ceremony/YYYY-MM-DD/
     ```
