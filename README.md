@@ -8,9 +8,11 @@ The process used to establish Docker's production TUF root is documented in [CER
 
 ## Keys
 
-| Keyholder Name                    | Role                    | Serial Number  |
-| --------------------------------- | ----------------------- | -------------- |
-| Jean Laurent (@jeanlaurent)       | Root                    | 28751288       |
-| Laurent Goderre (@LaurentGoderre) | Delegated Targets (DOI) | 25515985       |
-| Joel Kamp (@mrjoelkamp)           | Delegated Targets (DOI) | 25515139       |
-| David Dooling (@whalelines)       | Delegated Targets (DOI) | 25515003       |
+| Keyholder Name                    | Role                             | Serial Number |
+| --------------------------------- | -------------------------------- | ------------- |
+| Jean Laurent (@jeanlaurent)       | Root                             | 28751288      |
+| Alex Hokanson (@ingshtrom)        | Root                             | [25515142](./ceremony/2024-04-09/keys/25515142/)      |
+| Brett Inman (@binman-docker)      | Root                             | [25515991](./ceremony/2024-04-09/keys/25515991/)      |
+| Laurent Goderre (@LaurentGoderre) | Delegated Targets (DOI)          | [25515985](./ceremony/2024-04-09/keys/25515985/)      |
+| Joel Kamp (@mrjoelkamp)           | Targets, Delegated Targets (DOI) | [25515139](./ceremony/2024-04-09/keys/25515139/)      |
+| David Dooling (@whalelines)       | Targets, Delegated Targets (DOI) | [25515003](./ceremony/2024-04-09/keys/25515003/)      |
