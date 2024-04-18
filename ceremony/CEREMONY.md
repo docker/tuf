@@ -74,7 +74,7 @@ Before performing the production TUF root signing ceremony, perform a dry-run to
 ### Procedure
 
 #### Initialize TUF Repository
-This section is to be completed by the root signing lead only.
+This section is to be completed by the root signing lead only. In other words, root and target signers _do not_ have to execute any of the commands in this section.
 
 1. The lead signs into Docker Image Signing - Production (654654578585) AWS account
 1. The lead initializes the TUF signing ceremony by running the following command:
