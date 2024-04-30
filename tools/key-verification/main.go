@@ -36,6 +36,10 @@ func main() {
 		fmt.Println("Error reading directory:", err)
 		return
 	}
+	if len(devices) == 0 {
+		fmt.Println("No devices found in the directory:", pathToKeys)
+		return
+	}
 	for _, device := range devices {
 		if device.IsDir() {
 			serial := device.Name()
