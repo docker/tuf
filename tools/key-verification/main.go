@@ -33,12 +33,12 @@ func main() {
 	}
 	devices, err := os.ReadDir(pathToKeys)
 	if err != nil {
-		fmt.Println("Error reading directory:", err)
-		return
+		fmt.Fprintln(os.Stderr, "Error reading directory:", err)
+		os.Exit(1)
 	}
 	if len(devices) == 0 {
-		fmt.Println("No devices found in the directory:", pathToKeys)
-		return
+		fmt.Fprintln(os.Stderr, "No devices found in the directory:", pathToKeys)
+		os.Exit(1)
 	}
 	for _, device := range devices {
 		if device.IsDir() {
@@ -46,7 +46,7 @@ func main() {
 			path := filepath.Join(pathToKeys, serial)
 			err := verifyDeviceAttestation(serial, path)
 			if err != nil {
-				fmt.Println("Error verifying device attestation:", err)
+				fmt.Fprintln(os.Stderr, "Error verifying device attestation:", err)
 				continue
 			}
 			fmt.Println("Device attestation verified for:", serial)
