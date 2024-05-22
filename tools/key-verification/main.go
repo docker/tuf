@@ -31,22 +31,30 @@ func main() {
 	if pathToKeys == "" {
 		pathToKeys = defaultKeysDir
 	}
-	devices, err := os.ReadDir(pathToKeys)
+	entries, err := os.ReadDir(pathToKeys)
 	if err != nil {
-		fmt.Println("Error reading directory:", err)
-		return
+		fmt.Fprintln(os.Stderr, "Error reading directory:", err)
+		os.Exit(1)
+	}
+	var devices []os.DirEntry
+	for _, device := range entries {
+		if device.IsDir() {
+			devices = append(devices, device)
+		}
+	}
+	if len(devices) == 0 {
+		fmt.Fprintln(os.Stderr, "No devices found in the directory:", pathToKeys)
+		os.Exit(1)
 	}
 	for _, device := range devices {
-		if device.IsDir() {
-			serial := device.Name()
-			path := filepath.Join(pathToKeys, serial)
-			err := verifyDeviceAttestation(serial, path)
-			if err != nil {
-				fmt.Println("Error verifying device attestation:", err)
-				continue
-			}
-			fmt.Println("Device attestation verified for:", serial)
+		serial := device.Name()
+		path := filepath.Join(pathToKeys, serial)
+		err := verifyDeviceAttestation(serial, path)
+		if err != nil {
+			fmt.Fprintln(os.Stderr, "Error verifying device attestation:", err)
+			continue
 		}
+		fmt.Println("Device attestation verified for:", serial)
 	}
 }
 
