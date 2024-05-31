@@ -71,6 +71,18 @@ Before performing the production TUF root signing ceremony, perform a dry-run to
     - signing lead collects a comma separated list of all target key holder GitHub handles
     - signing lead configures `~/.aws/config` for access to the Docker Image Signing - Production (654654578585) AWS account
 
+> [!TIP]
+> When installing the TUF-on-CI CLI as part of the
+> [TUF-on-CI signer setup instructions](https://github.com/theupdateframework/tuf-on-ci/blob/main/docs/SIGNER-SETUP.md),
+> it may be helpful to create a [Python virtual environment](https://docs.python.org/3/library/venv.html).
+> 
+>   $ mkdir ~/.venv
+>   $ python3 -m venv ~/.venv/tuf
+>   $ . ~/.venv/tuf/bin/activate
+>   $ pip3 install tuf-on-ci-sign
+> 
+> You would need to source the `activate` script in any shell where you want to run the `tuf-on-ci-sign` command.
+
 ### Procedure
 
 #### Initialize TUF Repository
@@ -145,7 +157,7 @@ This section is to be completed by the root signing lead only. In other words, r
 #### Keyholder Root Signing
 This section is to be completed by all root key and targets key holders.
 
-1. Each key holder opens the newly created signing event PR [https://github.com/docker/tuf/pulls](https://github.com/docker/tuf/pulls)
+1. Navigate to the directory containing the clone of the repository you are signing.
 1. Copy the command to accept invite to join root
     ```sh
     tuf-on-ci-sign sign/init
