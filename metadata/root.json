@@ -3,7 +3,7 @@
  "signed": {
   "_type": "root",
   "consistent_snapshot": true,
-  "expires": "2025-06-03T21:46:28Z",
+  "expires": "2025-06-03T21:48:06Z",
   "keys": {
    "aef160e03958d5346c903dda755c07e952127ef523df5ec33bd9b24d41fe1cf4": {
     "keytype": "ecdsa",
@@ -12,6 +12,14 @@
     },
     "scheme": "ecdsa-sha2-nistp256",
     "x-tuf-on-ci-online-uri": "awskms:arn:aws:kms:us-east-1:654654578585:key/751429f1-0aea-4bd8-b450-bb1bce6b058f"
+   },
+   "f2149d8b7c1ece56d87d81f27fa68b745efc841892b3acfa382ad7f611e612ec": {
+    "keytype": "ecdsa",
+    "keyval": {
+     "public": "-----BEGIN PUBLIC KEY-----\nMHYwEAYHKoZIzj0CAQYFK4EEACIDYgAEtWRLfl1pLhd5pn4gOmiCQwxE68U0+mIl\n1sU9ugeUz2aCZ9GcTjDNFE/7ZOat74ajeaFi9zmdeCi3UTYioLXNOXfbN6mxM9iQ\nGG3Z5OWYsZpeAv+5jhly2JeWUhFTuJpd\n-----END PUBLIC KEY-----\n"
+    },
+    "scheme": "ecdsa-sha2-nistp384",
+    "x-tuf-on-ci-keyowner": "@mrjoelkamp"
    }
   },
   "roles": {
@@ -28,7 +36,9 @@
     "x-tuf-on-ci-signing-period": 60
    },
    "targets": {
-    "keyids": [],
+    "keyids": [
+     "f2149d8b7c1ece56d87d81f27fa68b745efc841892b3acfa382ad7f611e612ec"
+    ],
     "threshold": 2
    },
    "timestamp": {
