@@ -1,0 +1,48 @@
+{
+ "signatures": [],
+ "signed": {
+  "_type": "root",
+  "consistent_snapshot": true,
+  "expires": "2025-06-03T21:46:28Z",
+  "keys": {
+   "aef160e03958d5346c903dda755c07e952127ef523df5ec33bd9b24d41fe1cf4": {
+    "keytype": "ecdsa",
+    "keyval": {
+     "public": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE5gH1kg/MZeiF/GO222hxMerv7MBC\nn91IJG8BbYWKmqZm2za+/QDyrMZExTguYlutu77jZqbkRZEFb/LbL4Ntuw==\n-----END PUBLIC KEY-----\n"
+    },
+    "scheme": "ecdsa-sha2-nistp256",
+    "x-tuf-on-ci-online-uri": "awskms:arn:aws:kms:us-east-1:654654578585:key/751429f1-0aea-4bd8-b450-bb1bce6b058f"
+   }
+  },
+  "roles": {
+   "root": {
+    "keyids": [],
+    "threshold": 3
+   },
+   "snapshot": {
+    "keyids": [
+     "aef160e03958d5346c903dda755c07e952127ef523df5ec33bd9b24d41fe1cf4"
+    ],
+    "threshold": 1,
+    "x-tuf-on-ci-expiry-period": 365,
+    "x-tuf-on-ci-signing-period": 60
+   },
+   "targets": {
+    "keyids": [],
+    "threshold": 2
+   },
+   "timestamp": {
+    "keyids": [
+     "aef160e03958d5346c903dda755c07e952127ef523df5ec33bd9b24d41fe1cf4"
+    ],
+    "threshold": 1,
+    "x-tuf-on-ci-expiry-period": 2,
+    "x-tuf-on-ci-signing-period": 1
+   }
+  },
+  "spec_version": "1.0.31",
+  "version": 1,
+  "x-tuf-on-ci-expiry-period": 365,
+  "x-tuf-on-ci-signing-period": 60
+ }
+}
