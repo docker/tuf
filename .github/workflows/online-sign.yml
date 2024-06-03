@@ -1,0 +1,53 @@
+name: TUF-on-CI online signing
+
+permissions: {}
+
+on:
+  schedule:
+    - cron: '17 1,7,13,19 * * *'
+  push:
+    branches: [main]
+    paths:
+      ['metadata/**', '!metadata/timestamp.json', '!metadata/snapshot.json']
+  workflow_dispatch:
+
+jobs:
+  online-sign:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write # for OIDC identity access
+      contents: write # for commiting snapshot/timestamp changes
+      actions: write # for dispatching publish workflow
+    steps:
+      - name: Generate GitHub App Token
+        id: app-token
+        uses: actions/create-github-app-token@a0de6af83968303c8c955486bf9739a57d23c7f1 # v1.10.0
+        with:
+          app-id: ${{ vars.APP_ID }}
+          private-key: ${{ secrets.APP_PRIVATE_KEY }}
+      - id: online-sign
+        uses: theupdateframework/tuf-on-ci/actions/online-sign@a486e2d6fcf93af4cb0f479e6a280f34125647d6 # v0.10.0
+        with:
+          token: ${{ steps.app-token.outputs.token }}
+          aws_role_to_assume: ${{ vars.AWS_ROLE_TO_ASSUME }}
+          aws_region: ${{ vars.AWS_REGION }}
+
+  update-issue:
+    runs-on: ubuntu-latest
+    needs: [online-sign]
+    if: always() && !cancelled()
+    permissions:
+      issues: write # for modifying Issues
+      contents: read # for checking out the repository
+    steps:
+      - name: Generate GitHub App Token
+        id: app-token
+        uses: actions/create-github-app-token@a0de6af83968303c8c955486bf9739a57d23c7f1 # v1.10.0
+        with:
+          app-id: ${{ vars.APP_ID }}
+          private-key: ${{ secrets.APP_PRIVATE_KEY }}
+      - name: Update the issue for the workflow
+        uses: theupdateframework/tuf-on-ci/actions/update-issue@a486e2d6fcf93af4cb0f479e6a280f34125647d6 # v0.10.0
+        with:
+          token: ${{ steps.app-token.outputs.token }}
+          success: ${{ !contains(needs.*.result, 'failure') }}
