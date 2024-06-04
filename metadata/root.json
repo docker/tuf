@@ -3,7 +3,7 @@
  "signed": {
   "_type": "root",
   "consistent_snapshot": true,
-  "expires": "2025-06-03T21:48:06Z",
+  "expires": "2025-06-04T08:28:56Z",
   "keys": {
    "aef160e03958d5346c903dda755c07e952127ef523df5ec33bd9b24d41fe1cf4": {
     "keytype": "ecdsa",
@@ -12,6 +12,14 @@
     },
     "scheme": "ecdsa-sha2-nistp256",
     "x-tuf-on-ci-online-uri": "awskms:arn:aws:kms:us-east-1:654654578585:key/751429f1-0aea-4bd8-b450-bb1bce6b058f"
+   },
+   "da52a1fb41a0a1f71cba47032f1074a4dc380aef4f3c53553a95ce54e60942ee": {
+    "keytype": "ecdsa",
+    "keyval": {
+     "public": "-----BEGIN PUBLIC KEY-----\nMHYwEAYHKoZIzj0CAQYFK4EEACIDYgAE5pyJ/RXlRO/a2WBSAprikm+VVPqZGC1M\nqgVXE3avwqb9d9lPc9Cphfd4CIAzPCKgeUkGMzQWcC1OwVjOwiB+GRq2Owf7T8pa\nKUe/zRoLjAlUnzUITHP226L1DmQ6Swos\n-----END PUBLIC KEY-----\n"
+    },
+    "scheme": "ecdsa-sha2-nistp384",
+    "x-tuf-on-ci-keyowner": "@kipz"
    },
    "f2149d8b7c1ece56d87d81f27fa68b745efc841892b3acfa382ad7f611e612ec": {
     "keytype": "ecdsa",
@@ -37,7 +45,8 @@
    },
    "targets": {
     "keyids": [
-     "f2149d8b7c1ece56d87d81f27fa68b745efc841892b3acfa382ad7f611e612ec"
+     "f2149d8b7c1ece56d87d81f27fa68b745efc841892b3acfa382ad7f611e612ec",
+     "da52a1fb41a0a1f71cba47032f1074a4dc380aef4f3c53553a95ce54e60942ee"
     ],
     "threshold": 2
    },
