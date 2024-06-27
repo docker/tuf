@@ -14,7 +14,7 @@ The process used to establish Docker's production TUF root is documented in [CER
 | Alex Hokanson    | [ingshtrom](https://github.com/ingshtrom)                       | Root                             | [25515142](./ceremony/2024-04-09/keys/25515142/) |
 | Brett Inman      | [binman-docker](https://github.com/binman-docker)               | Root                             | [25515991](./ceremony/2024-04-09/keys/25515991/) |
 | Christian Dupuis | [cdupuis](https://github.com/cdupuis)                           | Root                             | [25599865](./ceremony/2024-04-09/keys/25599865/) |
-| Rachel Taylor    | [rachel-taylor-docker](https://github.com/rachel-taylor-docker) | Root                             | [25515144](./ceremony/2024-04-09/keys/25515144/) |
+| Rachel Taylor    | [rachel-taylor-docker](https://github.com/rachel-taylor-docker) | Root                             | [25515264](./ceremony/2024-04-09/keys/25515264/) |
 | Laurent Goderre  | [LaurentGoderre](https://github.com/LaurentGoderre)             | Delegated Targets (DOI)          | [25515985](./ceremony/2024-04-09/keys/25515985/) |
 | Tianon Gravi     | [tianon-sso](https://github.com/tianon-sso)                     | Delegated Targets (DOI)          | [25515137](./ceremony/2024-04-09/keys/25515137/) |
 | Joseph Ferguson  | [yosifkit](https://github.com/yosifkit)                         | Delegated Targets (DOI)          | [25515267](./ceremony/2024-04-09/keys/25515267/) |
