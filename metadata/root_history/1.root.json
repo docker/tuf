@@ -10,7 +10,7 @@
   },
   {
    "keyid": "9c8e1be7d8d0e30656adc81ac201e05cb47a5a097d4d301fd121b77c320231c4",
-   "sig": ""
+   "sig": "306502307e82d7bc0c66074b06cfc13bac3761c8f677eef252c08448eb33c0249569500e8be2a1ae78c87b5888ed80d088f97fbb023100c358c6ebe18d237bae9a9daeaf2db82297cda8eca635fc22719142740fb23b32eac0341754dd2a85b684c46e3a087ada"
   },
   {
    "keyid": "373d0a38247919a78cf400cf9a90abb9aa23a3c3dce1deee995fdd6a81507117",
@@ -33,14 +33,6 @@
     },
     "scheme": "ecdsa-sha2-nistp384",
     "x-tuf-on-ci-keyowner": "@jeanlaurent"
-   },
-   "9c8e1be7d8d0e30656adc81ac201e05cb47a5a097d4d301fd121b77c320231c4": {
-    "keytype": "ecdsa",
-    "keyval": {
-     "public": "-----BEGIN PUBLIC KEY-----\nMHYwEAYHKoZIzj0CAQYFK4EEACIDYgAEtuvb7ABLM07Km3njLJJtqAan+YEMaYjc\nYdqhTQiv8cKP+B6tKyVcTzh1i0fBfa3APARJrz5ZHfEsMWBxJhfRGwfhiEEO4hDY\nITkKtF79OIAc586+Sxhm4GPwX0Qv8aRS\n-----END PUBLIC KEY-----\n"
-    },
-    "scheme": "ecdsa-sha2-nistp384",
-    "x-tuf-on-ci-keyowner": "@rachel-taylor-docker"
    },
    "2ff207ae7d7b595ef69589622067ef5b6668e1a43081377d942ed8749fa919b4": {
     "keytype": "ecdsa",
@@ -81,6 +73,14 @@
     },
     "scheme": "ecdsa-sha2-nistp384",
     "x-tuf-on-ci-keyowner": "@jonnystoten"
+   },
+   "9c8e1be7d8d0e30656adc81ac201e05cb47a5a097d4d301fd121b77c320231c4": {
+    "keytype": "ecdsa",
+    "keyval": {
+     "public": "-----BEGIN PUBLIC KEY-----\nMHYwEAYHKoZIzj0CAQYFK4EEACIDYgAEWDreR+iXRtTStv5zmCLGoSmvvfV9/agY\nkx4O1XpRinBwAAA/IO4MI+YCoY0EQpKlSxl0DoVe6hmiXq2ezjTbebGDO66+fTZH\nkrr4KiCsZ8QcdPAR2cUvXkgyBp0WtYYS\n-----END PUBLIC KEY-----\n"
+    },
+    "scheme": "ecdsa-sha2-nistp384",
+    "x-tuf-on-ci-keyowner": "@rachel-taylor-docker"
    },
    "aef160e03958d5346c903dda755c07e952127ef523df5ec33bd9b24d41fe1cf4": {
     "keytype": "ecdsa",
