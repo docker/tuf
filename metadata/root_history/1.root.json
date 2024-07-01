@@ -9,7 +9,7 @@
    "sig": "306502305c977b28cbdc44a5a202a39b49ee798ea7c3cbd6fb43082206956549ad6c4ac15669242e9f84ca994bfc5bdb3a86e6b0023100a88f97ed269d6d70a9d405dcfbebf621a8c939e9fac45e55bdef0d28d3ca84e717e4ed9e35190ae2564a96604b2cb9e5"
   },
   {
-   "keyid": "1177b82876d38dfc772e87de78a79835b246255e4d2f3dfcdeda43a12ecc3925",
+   "keyid": "9c8e1be7d8d0e30656adc81ac201e05cb47a5a097d4d301fd121b77c320231c4",
    "sig": ""
   },
   {
@@ -34,7 +34,7 @@
     "scheme": "ecdsa-sha2-nistp384",
     "x-tuf-on-ci-keyowner": "@jeanlaurent"
    },
-   "1177b82876d38dfc772e87de78a79835b246255e4d2f3dfcdeda43a12ecc3925": {
+   "9c8e1be7d8d0e30656adc81ac201e05cb47a5a097d4d301fd121b77c320231c4": {
     "keytype": "ecdsa",
     "keyval": {
      "public": "-----BEGIN PUBLIC KEY-----\nMHYwEAYHKoZIzj0CAQYFK4EEACIDYgAEtuvb7ABLM07Km3njLJJtqAan+YEMaYjc\nYdqhTQiv8cKP+B6tKyVcTzh1i0fBfa3APARJrz5ZHfEsMWBxJhfRGwfhiEEO4hDY\nITkKtF79OIAc586+Sxhm4GPwX0Qv8aRS\n-----END PUBLIC KEY-----\n"
@@ -112,7 +112,7 @@
     "keyids": [
      "08d6f4ca1d0be93a6ceddca15051c0aeec6b98c73e29f3a714de301042d6eeee",
      "3ebd40525193d7628d0b9eccd4771df7297bc87519ec6f312863bb4470966bea",
-     "1177b82876d38dfc772e87de78a79835b246255e4d2f3dfcdeda43a12ecc3925",
+     "9c8e1be7d8d0e30656adc81ac201e05cb47a5a097d4d301fd121b77c320231c4",
      "373d0a38247919a78cf400cf9a90abb9aa23a3c3dce1deee995fdd6a81507117",
      "48a873aa6c4189804228590af4d48ee5ad3b76417592efdbcef2532401925669"
     ],
