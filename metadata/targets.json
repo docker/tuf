@@ -10,7 +10,7 @@
   },
   {
    "keyid": "6132f1f2dd14bf3e9ba1a8df4c8435a77d2fd57f4a99bbb699ae61f85907818e",
-   "sig": "30650231009e0a111467627597e6c0783c76282790fba65c7ed9196579c97aaabb53f072a432de672c54796a8bb3bd07c6091683c002302f1445aee33af9662d849f3a8fa5f649f70eab76c628548f14be3cdfa4cbf95892414b943905ca8f3012a6886db7d23d"
+   "sig": ""
   },
   {
    "keyid": "cda750ab29ce33e19ad2fdee4204ad0190b0a33f79e1c5c18a38992d576143d7",
@@ -28,12 +28,21 @@
      },
      "scheme": "ecdsa-sha2-nistp384",
      "x-tuf-on-ci-keyowner": "@jonnystoten"
+    },
+    "81cf5a78d6ea2cd904256b9d814b340289b765e6f75ec4397e4ebb7586cab664": {
+     "keytype": "ecdsa",
+     "keyval": {
+      "public": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEWmhpAfB7Q53UNluMhpkDxXXup4E0\n2Hh4PSgHC1Yh6brGl6Akq9a4io55LtZTk5mnCTqxuB+rc5cI/yaNUeWEqQ==\n-----END PUBLIC KEY-----\n"
+     },
+     "scheme": "ecdsa-sha2-nistp256",
+     "x-tuf-on-ci-keyowner": "@kipz"
     }
    },
    "roles": [
     {
      "keyids": [
-      "6132f1f2dd14bf3e9ba1a8df4c8435a77d2fd57f4a99bbb699ae61f85907818e"
+      "6132f1f2dd14bf3e9ba1a8df4c8435a77d2fd57f4a99bbb699ae61f85907818e",
+      "81cf5a78d6ea2cd904256b9d814b340289b765e6f75ec4397e4ebb7586cab664"
      ],
      "name": "doi",
      "paths": [
@@ -47,7 +56,7 @@
     }
    ]
   },
-  "expires": "2025-07-02T10:42:32Z",
+  "expires": "2025-07-02T10:59:55Z",
   "spec_version": "1.0.31",
   "targets": {},
   "version": 2,
