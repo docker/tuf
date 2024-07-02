@@ -45,6 +45,14 @@
      "scheme": "ecdsa-sha2-nistp256",
      "x-tuf-on-ci-keyowner": "@kipz"
     },
+    "ad252c7bb8e7274e415d9f1a2afadf0abf4c239df983dcb8ee3e7fbb7873c21c": {
+     "keytype": "ecdsa",
+     "keyval": {
+      "public": "-----BEGIN PUBLIC KEY-----\nMHYwEAYHKoZIzj0CAQYFK4EEACIDYgAEijwU8FCaZuJTGPmnhzogATr7q/5Z4hWK\nJxIE/5OVeL9a4xy8GXlIlROixCvmgv2RsMpoGdLNUUG7+dENLRx1vOlsCcopRq5k\n+9NAEME0UTTsnhNC7zkKaogQqO1EQJB8\n-----END PUBLIC KEY-----\n"
+     },
+     "scheme": "ecdsa-sha2-nistp384",
+     "x-tuf-on-ci-keyowner": "@yosifkit"
+    },
     "cda750ab29ce33e19ad2fdee4204ad0190b0a33f79e1c5c18a38992d576143d7": {
      "keytype": "ecdsa",
      "keyval": {
@@ -69,7 +77,8 @@
       "81cf5a78d6ea2cd904256b9d814b340289b765e6f75ec4397e4ebb7586cab664",
       "f2149d8b7c1ece56d87d81f27fa68b745efc841892b3acfa382ad7f611e612ec",
       "7f4720651538fe96ce3067befcea395eccd49aa1a509568122eaadb300b0f880",
-      "cda750ab29ce33e19ad2fdee4204ad0190b0a33f79e1c5c18a38992d576143d7"
+      "cda750ab29ce33e19ad2fdee4204ad0190b0a33f79e1c5c18a38992d576143d7",
+      "ad252c7bb8e7274e415d9f1a2afadf0abf4c239df983dcb8ee3e7fbb7873c21c"
      ],
      "name": "doi",
      "paths": [
@@ -83,7 +92,7 @@
     }
    ]
   },
-  "expires": "2025-07-02T16:45:41Z",
+  "expires": "2025-07-02T17:05:27Z",
   "spec_version": "1.0.31",
   "targets": {},
   "version": 2,
