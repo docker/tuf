@@ -19,7 +19,7 @@ jobs:
           username: dockerpublicbot
           password: ${{ secrets.DOCKERPUBLICBOT_WRITE_PAT }}
       - name: Mirror metadata
-        uses: docker/go-tuf-mirror/actions/metadata@5f582e994a760a9d839a3845d7974f1c2a2dc006 # v0.1.10-patch
+        uses: docker/go-tuf-mirror/actions/metadata@7e98aaf32ebccc7415882c0365908ed86cdeaf9e # v0.2.0
         with:
           targets: https://docker.github.io/tuf/targets
           source: https://docker.github.io/tuf/metadata
@@ -27,7 +27,7 @@ jobs:
           tuf-root: prod
           flags: "-f"
       - name: Mirror targets
-        uses: docker/go-tuf-mirror/actions/targets@5f582e994a760a9d839a3845d7974f1c2a2dc006 # v0.1.10-patch
+        uses: docker/go-tuf-mirror/actions/targets@7e98aaf32ebccc7415882c0365908ed86cdeaf9e # v0.2.0
         with:
           metadata: https://docker.github.io/tuf/metadata
           source: https://docker.github.io/tuf/targets
