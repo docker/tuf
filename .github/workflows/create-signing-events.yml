@@ -21,7 +21,7 @@ jobs:
           app-id: ${{ vars.APP_ID }}
           private-key: ${{ secrets.APP_PRIVATE_KEY }}
       - name: Create signing events for offline version bumps
-        uses: theupdateframework/tuf-on-ci/actions/create-signing-events@a486e2d6fcf93af4cb0f479e6a280f34125647d6 # v0.10.0
+        uses: theupdateframework/tuf-on-ci/actions/create-signing-events@95dc66aba6102bbe911ef93c69395ff62ed69bd4 # v0.11.0
         with:
           token: ${{ steps.app-token.outputs.token }}
 
@@ -40,7 +40,7 @@ jobs:
           app-id: ${{ vars.APP_ID }}
           private-key: ${{ secrets.APP_PRIVATE_KEY }}
       - name: Update the issue for the workflow
-        uses: theupdateframework/tuf-on-ci/actions/update-issue@a486e2d6fcf93af4cb0f479e6a280f34125647d6 # v0.10.0
+        uses: theupdateframework/tuf-on-ci/actions/update-issue@95dc66aba6102bbe911ef93c69395ff62ed69bd4 # v0.11.0
         with:
           token: ${{ steps.app-token.outputs.token }}
           success: ${{ !contains(needs.*.result, 'failure') }}
