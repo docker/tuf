@@ -25,6 +25,6 @@ jobs:
           app-id: ${{ vars.APP_ID }}
           private-key: ${{ secrets.APP_PRIVATE_KEY }}
       - name: Signing event
-        uses: theupdateframework/tuf-on-ci/actions/signing-event@a486e2d6fcf93af4cb0f479e6a280f34125647d6 # v0.10.0
+        uses: theupdateframework/tuf-on-ci/actions/signing-event@95dc66aba6102bbe911ef93c69395ff62ed69bd4 # v0.11.0
         with:
           token: ${{ steps.app-token.outputs.token }}
