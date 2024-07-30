@@ -1,3 +1,4 @@
+# doi/policy-full.rego verifies and validates the provenance and SBOM attestations attached to the image
 package attest
 
 import rego.v1
