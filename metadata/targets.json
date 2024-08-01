@@ -2,19 +2,19 @@
  "signatures": [
   {
    "keyid": "f2149d8b7c1ece56d87d81f27fa68b745efc841892b3acfa382ad7f611e612ec",
-   "sig": "3065023100cd224e0a5ab5977746d9cb3598bf2c77564921447fd27aa698b583a0fd5d40bfadb09858fccabe088e987e47be9434ac02305b13c5915e34e7adbd7920ddccb5dd30d7b28bfaed36a3b419d05058df9c603539c6fdcfb747a5c91c19d03538641c36"
+   "sig": "3065023100d47998197763693ef98dddb2ac4077e0726ee6b364bb53c4ad620dda2d254fe6f7cc4dcdae8b62ad48091b7a182c409a0230701fbf11af5a33b1353da9a06d660bb2c6e978de80ce0c0a9e07ac525783899aad7c0d6a9c2d3075dc593016b6ab40f9"
   },
   {
    "keyid": "2ff207ae7d7b595ef69589622067ef5b6668e1a43081377d942ed8749fa919b4",
-   "sig": ""
+   "sig": "3064023049ce35f3d4c25d72e88a251baed7250e449f6c1e852f6da42a6ede0cb76b5f707277f163b8ae24fe9e8b5669fccee38a0230121b9e9fa3ce7be2dc7f9d14050367c0233c2a205e61342bb22d29e21ee7e6442bc23c07f064757ffeffa2fdbb4fa2e2"
   },
   {
    "keyid": "6132f1f2dd14bf3e9ba1a8df4c8435a77d2fd57f4a99bbb699ae61f85907818e",
-   "sig": "30640230333bebd74b1b3df2ffb1c01590826bcdc844bbb4d9001ffc706c1b0b460ce02b2ac749fbad1b1c2775ff06710e43edca02304968d579160482e37b7537eff8580bb77038375326181c02f1fc622634bbf18df237b6740299075fd59d525cfd4d1ac8"
+   "sig": ""
   },
   {
    "keyid": "cda750ab29ce33e19ad2fdee4204ad0190b0a33f79e1c5c18a38992d576143d7",
-   "sig": ""
+   "sig": "3066023100d54ec3fb635733fcc094f115d27f90099b7fc22a1bd6cbe4af4cb9a92630121d9c0cf23a00d7691001968acaa50fc019023100874ad81a95a60b069e37a3148595b8c16a66daf4c29978416ead8108746b7864c1fab9eb3ed9d309a1810c0865a92fc0"
   }
  ],
  "signed": {
@@ -101,9 +101,15 @@
     }
    ]
   },
-  "expires": "2025-07-11T14:09:16Z",
+  "expires": "2025-07-30T20:42:33Z",
   "spec_version": "1.0.31",
   "targets": {
+   "mapping.yaml": {
+    "hashes": {
+     "sha256": "5b10a0858bf3446c4650abb938d989e4400f738400a626cba01b04eef1e6985b"
+    },
+    "length": 398
+   },
    "version-constraints": {
     "hashes": {
      "sha256": "be976ac935d635fb38588d36cbd9cf159ed1a0176779737c687439b567e609b0"
@@ -111,7 +117,7 @@
     "length": 12
    }
   },
-  "version": 3,
+  "version": 4,
   "x-tuf-on-ci-expiry-period": 365,
   "x-tuf-on-ci-signing-period": 60
  }
