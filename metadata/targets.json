@@ -2,11 +2,11 @@
  "signatures": [
   {
    "keyid": "f2149d8b7c1ece56d87d81f27fa68b745efc841892b3acfa382ad7f611e612ec",
-   "sig": "3065023100d47998197763693ef98dddb2ac4077e0726ee6b364bb53c4ad620dda2d254fe6f7cc4dcdae8b62ad48091b7a182c409a0230701fbf11af5a33b1353da9a06d660bb2c6e978de80ce0c0a9e07ac525783899aad7c0d6a9c2d3075dc593016b6ab40f9"
+   "sig": ""
   },
   {
    "keyid": "2ff207ae7d7b595ef69589622067ef5b6668e1a43081377d942ed8749fa919b4",
-   "sig": "3064023049ce35f3d4c25d72e88a251baed7250e449f6c1e852f6da42a6ede0cb76b5f707277f163b8ae24fe9e8b5669fccee38a0230121b9e9fa3ce7be2dc7f9d14050367c0233c2a205e61342bb22d29e21ee7e6442bc23c07f064757ffeffa2fdbb4fa2e2"
+   "sig": ""
   },
   {
    "keyid": "6132f1f2dd14bf3e9ba1a8df4c8435a77d2fd57f4a99bbb699ae61f85907818e",
@@ -14,7 +14,7 @@
   },
   {
    "keyid": "cda750ab29ce33e19ad2fdee4204ad0190b0a33f79e1c5c18a38992d576143d7",
-   "sig": "3066023100d54ec3fb635733fcc094f115d27f90099b7fc22a1bd6cbe4af4cb9a92630121d9c0cf23a00d7691001968acaa50fc019023100874ad81a95a60b069e37a3148595b8c16a66daf4c29978416ead8108746b7864c1fab9eb3ed9d309a1810c0865a92fc0"
+   "sig": ""
   }
  ],
  "signed": {
@@ -45,14 +45,6 @@
      "scheme": "ecdsa-sha2-nistp384",
      "x-tuf-on-ci-keyowner": "@tianon-sso"
     },
-    "81cf5a78d6ea2cd904256b9d814b340289b765e6f75ec4397e4ebb7586cab664": {
-     "keytype": "ecdsa",
-     "keyval": {
-      "public": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEWmhpAfB7Q53UNluMhpkDxXXup4E0\n2Hh4PSgHC1Yh6brGl6Akq9a4io55LtZTk5mnCTqxuB+rc5cI/yaNUeWEqQ==\n-----END PUBLIC KEY-----\n"
-     },
-     "scheme": "ecdsa-sha2-nistp256",
-     "x-tuf-on-ci-keyowner": "@kipz"
-    },
     "ad252c7bb8e7274e415d9f1a2afadf0abf4c239df983dcb8ee3e7fbb7873c21c": {
      "keytype": "ecdsa",
      "keyval": {
@@ -82,7 +74,6 @@
     {
      "keyids": [
       "6132f1f2dd14bf3e9ba1a8df4c8435a77d2fd57f4a99bbb699ae61f85907818e",
-      "81cf5a78d6ea2cd904256b9d814b340289b765e6f75ec4397e4ebb7586cab664",
       "f2149d8b7c1ece56d87d81f27fa68b745efc841892b3acfa382ad7f611e612ec",
       "7f4720651538fe96ce3067befcea395eccd49aa1a509568122eaadb300b0f880",
       "cda750ab29ce33e19ad2fdee4204ad0190b0a33f79e1c5c18a38992d576143d7",
@@ -101,7 +92,7 @@
     }
    ]
   },
-  "expires": "2025-07-30T20:42:33Z",
+  "expires": "2025-08-01T13:49:21Z",
   "spec_version": "1.0.31",
   "targets": {
    "mapping.yaml": {
@@ -117,7 +108,7 @@
     "length": 12
    }
   },
-  "version": 4,
+  "version": 5,
   "x-tuf-on-ci-expiry-period": 365,
   "x-tuf-on-ci-signing-period": 60
  }
