@@ -1,1 +1,2 @@
-* @docker/supply-chain-security
+* @docker/signing
+targets/doi/ @docker/doi @docker/signing
