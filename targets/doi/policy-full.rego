@@ -204,9 +204,7 @@ result := {
 	"violations": all_violations,
 	"summary": {
 		"subjects": subjects,
-		"slsa_levels": ["SLSA_BUILD_LEVEL_3"],
-		"verifier": "docker-official-images",
-		"policy_uri": "https://docker.com/official/policy/v0.1",
+		"policy_uri": "https://github.com/docker/tuf/blob/main/targets/doi/policy-full.rego",
 	},
 }
 
