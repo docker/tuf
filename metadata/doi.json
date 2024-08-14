@@ -5,12 +5,8 @@
    "sig": ""
   },
   {
-   "keyid": "81cf5a78d6ea2cd904256b9d814b340289b765e6f75ec4397e4ebb7586cab664",
-   "sig": ""
-  },
-  {
    "keyid": "f2149d8b7c1ece56d87d81f27fa68b745efc841892b3acfa382ad7f611e612ec",
-   "sig": "3066023100c2ac77b6007f4accbc081143f9a4dc5728624c48a22a46b2bcf5cc8d8962e968c8cf21ec13b8cbdd8593f88574d4033d023100910dea0d3a238f7e1a9b3939629dadf48a6a5d0365a80067bed16dd88cbdcfa080c6102290c2bd31db117ce3ef89cb16"
+   "sig": ""
   },
   {
    "keyid": "7f4720651538fe96ce3067befcea395eccd49aa1a509568122eaadb300b0f880",
@@ -18,7 +14,7 @@
   },
   {
    "keyid": "cda750ab29ce33e19ad2fdee4204ad0190b0a33f79e1c5c18a38992d576143d7",
-   "sig": "3065023100acd2b99e436706ee43c2495eea4b14bb6d5c069ec7bab6264415ae6fc90ce1f768068952533ea6e936d82bfa6312d6a6023009679764fe40b730fb443b1e170b96ed3a92e1fa6f1170faecdf3e6bc548f3731642da7260684677ceb2d57e68592991"
+   "sig": ""
   },
   {
    "keyid": "ad252c7bb8e7274e415d9f1a2afadf0abf4c239df983dcb8ee3e7fbb7873c21c",
@@ -26,23 +22,23 @@
   },
   {
    "keyid": "344bbe123d59a19b7df05375059f0fc4acf8153e3693044f1364acb7e9f2005f",
-   "sig": "3064023031e46a8876271d2c7faa5e4e8fb2d8237a3ec21e342acca040abf5e88f8ac4c8d86731c8766413081abd6e7a8d80cb8b0230740b1558d014d37044204c8b069cbafeb9b533282010bc7af1cca61e1e9dbbb1df81897eff16c58e27483d88fc23be5e"
+   "sig": ""
   },
   {
    "keyid": "da52a1fb41a0a1f71cba47032f1074a4dc380aef4f3c53553a95ce54e60942ee",
-   "sig": "3065023100cefba5bf7c0b125d03463d597568d26214943dfa380f77daf02ba6d0ad9219cd1c850c088b996a610e480dc6e3bf902a02302c9959a71f0505651e01c62b12c15451ad287a0608b29028adf6a0f97be0719ce51903629d413d28259b7d7637c2c7c6"
+   "sig": ""
   }
  ],
  "signed": {
   "_type": "targets",
-  "expires": "2025-07-31T17:08:50Z",
+  "expires": "2025-08-14T18:20:58Z",
   "spec_version": "1.0.31",
   "targets": {
    "doi/policy-full.rego": {
     "hashes": {
-     "sha256": "b8e1b940cce51ecef546a96d202cbfe000c40441a3869e5cc5790b27d35bce65"
+     "sha256": "51f187c7835e3ee1c9ae8d80e29b3a949ce3df8ee5c535cb1410b130876abe95"
     },
-    "length": 7972
+    "length": 7920
    },
    "doi/policy-vsa.rego": {
     "hashes": {
@@ -51,7 +47,7 @@
     "length": 6114
    }
   },
-  "version": 3,
+  "version": 4,
   "x-tuf-on-ci-expiry-period": 365,
   "x-tuf-on-ci-signing-period": 60
  }
