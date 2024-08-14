@@ -19,8 +19,6 @@ package main
 import (
 	"path/filepath"
 	"testing"
-
-	"github.com/stretchr/testify/assert"
 )
 
 const pathToKeys = "./test-keys"
@@ -42,9 +40,13 @@ func TestMain(t *testing.T) {
 			path := filepath.Join(pathToKeys, serial)
 			err := verifyDeviceAttestation(serial, path)
 			if tc.fail {
-				assert.Error(t, err)
+				if err == nil {
+					t.Fatal("expected error, got nil")
+				}
 			} else {
-				assert.NoError(t, err)
+				if err != nil {
+					t.Fatalf("unexpected error: %v", err)
+				}
 			}
 		})
 	}
