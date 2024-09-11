@@ -23,7 +23,7 @@ jobs:
           ref: main
           token: ${{ steps.rw-token.outputs.token }}
       - name: Promote testing files
-        run: rsync --recursive --ignore-times --delete --exclude /opkl/ --exclude /testing/ targets/testing/ targets
+        run: rsync --recursive --ignore-times --delete --exclude /testing/ targets/testing/ targets
       - name: Commit changes
         run: |
           git config --global user.name "github-actions[bot]"
