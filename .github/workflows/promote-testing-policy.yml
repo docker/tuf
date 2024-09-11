@@ -1,0 +1,37 @@
+name: Promote testing policy
+on:
+  workflow_dispatch:
+jobs:
+  promote-testing-policy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - run: git config --global core.autocrlf false
+      - name: Generate GitHub App Token
+        id: rw-token
+        uses: actions/create-github-app-token@31c86eb3b33c9b601a1f60f98dcbfd1d70f379b4 # v1.10.3
+        with:
+          app-id: ${{ vars.APP_ID }}
+          private-key: ${{ secrets.APP_PRIVATE_KEY }}
+      - name: Checkout tuf
+        id: checkout
+        uses: actions/checkout@v4
+        with:
+          repository: "docker/tuf"
+          ref: main
+          token: ${{ steps.rw-token.outputs.token }}
+      - name: Promote testing files
+        run: rsync --recursive --ignore-times --delete --exclude /opkl/ --exclude /testing/ targets/testing/ targets
+      - name: Commit changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --global url."https://x-access-token:${{ steps.rw-token.outputs.token }}@github.com".insteadOf "https://github.com"
+
+          git switch -c sign/promote-testing-policy-${{ github.run_number }}
+          git add targets
+          git commit -m "[BOT] Promote testing trust policy"
+
+          git push origin sign/promote-testing-policy-${{ github.run_number }}
