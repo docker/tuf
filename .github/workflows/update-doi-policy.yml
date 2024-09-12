@@ -1,0 +1,71 @@
+name: Update DOI policy
+on:
+  workflow_dispatch:
+jobs:
+  update-doi-policy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - run: git config --global core.autocrlf false
+      - name: Generate GitHub App Token
+        id: ro-token
+        uses: actions/create-github-app-token@31c86eb3b33c9b601a1f60f98dcbfd1d70f379b4 # v1.10.3
+        with:
+          app-id: ${{ vars.DOCKER_READ_APP_ID }}
+          private-key: ${{ secrets.DOCKER_READ_APP_PRIVATE_KEY }}
+          repositories: "doi-image-policy"
+      - name: Generate GitHub App Token
+        id: rw-token
+        uses: actions/create-github-app-token@31c86eb3b33c9b601a1f60f98dcbfd1d70f379b4 # v1.10.3
+        with:
+          app-id: ${{ vars.APP_ID }}
+          private-key: ${{ secrets.APP_PRIVATE_KEY }}
+      - id: doi-image-policy-release
+        run: |
+          export GH_TOKEN=${{ steps.ro-token.outputs.token }}
+          RESULT=$(gh release view -R docker/doi-image-policy --json tagName,body)
+          TAG_NAME=$(echo $RESULT | jq -r .tagName)
+          BODY=$(echo $RESULT | jq -r .body)
+          echo "release=${TAG_NAME}" >> $GITHUB_OUTPUT
+
+          EOF=b899cc67f081a8d05de8a5e778bde0cb7f0d034f970af6835b0992ee4cdc3536
+          echo "description<<$EOF" >> $GITHUB_OUTPUT
+          echo "$BODY" >> $GITHUB_OUTPUT
+          echo "$EOF" >> $GITHUB_OUTPUT
+      - name: Checkout doi-image-policy
+        uses: actions/checkout@v4
+        with:
+          repository: "docker/doi-image-policy"
+          ref: ${{ steps.doi-image-policy-release.outputs.release }}
+          token: ${{ steps.ro-token.outputs.token }}
+          path: doi-image-policy
+      - name: Checkout tuf
+        uses: actions/checkout@v4
+        with:
+          repository: "docker/tuf"
+          ref: main
+          token: ${{ steps.rw-token.outputs.token }}
+          path: tuf
+      - name: Copy policy files
+        run: find doi-image-policy/policy -name '*.rego' -not -name '*_test.rego' -print0 | tar -c -f - --null -T - | tar -C tuf/targets/doi -x --strip-components=2 -f -
+      - name: Commit changes
+        working-directory: tuf
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --global url."https://x-access-token:${{ steps.rw-token.outputs.token }}@github.com".insteadOf "https://github.com"
+
+          git switch -c sign/update-doi-trust-policy-${{ steps.doi-image-policy-release.outputs.release }}
+          git add targets
+
+          EOF=b899cc67f081a8d05de8a5e778bde0cb7f0d034f970af6835b0992ee4cdc3536
+          git commit -F- <<$EOF
+          [BOT] Update DOI trust policy to ${{ steps.doi-image-policy-release.outputs.release }}
+
+          Release notes:
+          ${{ steps.doi-image-policy-release.outputs.description }}
+          $EOF
+
+          git push origin sign/update-doi-trust-policy-${{ steps.doi-image-policy-release.outputs.release }}
