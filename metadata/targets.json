@@ -2,15 +2,15 @@
  "signatures": [
   {
    "keyid": "f2149d8b7c1ece56d87d81f27fa68b745efc841892b3acfa382ad7f611e612ec",
-   "sig": "306402305084195e7ebfed85b7f87dd3fa719147c746536a7807b707201ac3a17dc8f40148d124660087a9ad05ad2200e22f1fe702306d32eafdfe6e739ae73cf7fae0e25a15bdcdcd6d585cca9a91c1bc745c9b593095f4bf0054a23cb1cc590ac015b6312f"
+   "sig": "306502301d17890ccff0ffc2f7a8011ff93cde842833b5a4745ec969f3f5e4ed1aded758fcdda4d03f1a1182fe69d4e9d1e11dc5023100b52c9f0409fd57de06bc1bd276d090224d4812d665f3a0b635beb3fec3dd67359733c43a28a2c1e7a8fe242885e45ead"
   },
   {
    "keyid": "2ff207ae7d7b595ef69589622067ef5b6668e1a43081377d942ed8749fa919b4",
-   "sig": "3065023100b45732d7d4d035d2980ec52d876d9bc5b94a84f2a89ab875469678143c00fd8489384f67a2fdff3e4fbbb271235069940230570931ea01a278d6c6d1bb07380d95d89254345254ba1eadf5c4d3b6bc81505edc3c3da2f3f72be130b144c14e5b5a91"
+   "sig": "3065023100af0f07a44424ecea641828d78074908b18f0f7c3ded38514530160bbe54e11a35594a6b9f6ac7656e31594f74cf25f39023017756957f6e6145e6a3f4f9a98406ebe5af178362db05f2181226516046bc0dda077b3f5077587b79129ffd1df122933"
   },
   {
    "keyid": "6132f1f2dd14bf3e9ba1a8df4c8435a77d2fd57f4a99bbb699ae61f85907818e",
-   "sig": ""
+   "sig": "30660231008e30d3cd3d3ecf582cf18c8eb09be5676b58774d3a2d99be7393a5dac55509b4331322c2d5a0b3f3472aedd278d9c61a023100b2b3d260cbb05ec1a8cb00793f6da3d114ed8055f9beb839cee38ca20caf5d435b446a774e268ba4af38447cebde19e0"
   },
   {
    "keyid": "cda750ab29ce33e19ad2fdee4204ad0190b0a33f79e1c5c18a38992d576143d7",
@@ -98,10 +98,30 @@
      ],
      "terminating": true,
      "threshold": 2
+    },
+    {
+     "keyids": [
+      "6132f1f2dd14bf3e9ba1a8df4c8435a77d2fd57f4a99bbb699ae61f85907818e",
+      "f2149d8b7c1ece56d87d81f27fa68b745efc841892b3acfa382ad7f611e612ec",
+      "7f4720651538fe96ce3067befcea395eccd49aa1a509568122eaadb300b0f880",
+      "cda750ab29ce33e19ad2fdee4204ad0190b0a33f79e1c5c18a38992d576143d7",
+      "ad252c7bb8e7274e415d9f1a2afadf0abf4c239df983dcb8ee3e7fbb7873c21c",
+      "344bbe123d59a19b7df05375059f0fc4acf8153e3693044f1364acb7e9f2005f",
+      "da52a1fb41a0a1f71cba47032f1074a4dc380aef4f3c53553a95ce54e60942ee"
+     ],
+     "name": "testing",
+     "paths": [
+      "testing/*",
+      "testing/*/*",
+      "testing/*/*/*",
+      "testing/*/*/*/*"
+     ],
+     "terminating": true,
+     "threshold": 2
     }
    ]
   },
-  "expires": "2025-08-01T13:56:29Z",
+  "expires": "2025-09-11T12:48:14Z",
   "spec_version": "1.0.31",
   "targets": {
    "mapping.yaml": {
@@ -117,7 +137,7 @@
     "length": 12
    }
   },
-  "version": 5,
+  "version": 6,
   "x-tuf-on-ci-expiry-period": 365,
   "x-tuf-on-ci-signing-period": 60
  }
