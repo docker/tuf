@@ -1,0 +1,46 @@
+name: Update Rekor public key
+on:
+  workflow_dispatch:
+  # also run daily
+  schedule:
+    - cron: '5 0 * * *'
+jobs:
+  update-rekor-keys:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    permissions:
+      contents: write
+    steps:
+      - run: git config --global core.autocrlf false
+      - name: Generate GitHub App Token
+        id: rw-token
+        uses: actions/create-github-app-token@31c86eb3b33c9b601a1f60f98dcbfd1d70f379b4 # v1.10.3
+        with:
+          app-id: ${{ vars.APP_ID }}
+          private-key: ${{ secrets.APP_PRIVATE_KEY }}
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: dockerbuildbot
+          password: ${{ secrets.DOCKERBUILDBOT_READ_PAT }}
+      - name: Checkout tuf
+        id: checkout
+        uses: actions/checkout@v4
+        with:
+          repository: "docker/tuf"
+          ref: main
+          token: ${{ steps.rw-token.outputs.token }}
+      - name: Download Rekor public key
+      # image-signer-verifier:0.6.1
+        run: |
+          docker run -u "$(id -u):$(id -g)" --rm -e TUF_ROOT=/tmp/tuf -v /tmp:/tmp -v $(pwd):/out docker/image-signer-verifier@sha256:14118f0b38b1c01a46f817884dd2b00d42f93ef50e0bac788ab211e38f5718e9 rekor-pubkey -o /out/targets/testing/rekor/
+      - name: Commit changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --global url."https://x-access-token:${{ steps.rw-token.outputs.token }}@github.com".insteadOf "https://github.com"
+
+          git switch -c sign/update-rekor-keys-${{ github.run_number }}
+          git add targets
+          git commit -m "[BOT] Update Rekor public keys" || [[ $(git status --porcelain) == "" ]] && exit 0
+          git push origin sign/update-rekor-keys-${{ github.run_number }}"
