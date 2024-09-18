@@ -27,7 +27,7 @@ jobs:
         id: checkout
         uses: actions/checkout@v4
         with:
-          repository: "docker/tuf"
+          repository: docker/tuf
           ref: main
           token: ${{ steps.rw-token.outputs.token }}
       - name: Download Rekor public key
