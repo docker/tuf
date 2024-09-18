@@ -31,7 +31,7 @@ jobs:
           ref: main
           token: ${{ steps.rw-token.outputs.token }}
       - name: Download Rekor public key
-      # image-signer-verifier:0.6.1
+        # image-signer-verifier:0.6.1
         run: |
           docker run -u "$(id -u):$(id -g)" --rm -e TUF_ROOT=/tmp/tuf -v /tmp:/tmp -v $(pwd):/out docker/image-signer-verifier@sha256:14118f0b38b1c01a46f817884dd2b00d42f93ef50e0bac788ab211e38f5718e9 rekor-pubkey -o /out/targets/testing/rekor/
       - name: Commit changes
