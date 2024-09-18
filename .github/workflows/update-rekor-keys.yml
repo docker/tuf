@@ -42,5 +42,5 @@ jobs:
 
           git switch -c sign/update-rekor-keys-${{ github.run_number }}
           git add targets
-          git commit -m "[BOT] Update Rekor public keys" || [[ $(git status --porcelain) == "" ]] && exit 0
+          git commit -m "[BOT] Update Rekor public keys" || exit 0
           git push origin sign/update-rekor-keys-${{ github.run_number }}
