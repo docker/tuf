@@ -2,11 +2,11 @@
  "signatures": [
   {
    "keyid": "6132f1f2dd14bf3e9ba1a8df4c8435a77d2fd57f4a99bbb699ae61f85907818e",
-   "sig": "306402303f3fa57c7c7fd6d9676254a45b23b2acdded5a55b87ce90462112a6f6c82bc2cdc6b28f70bca0dcd523b109b420a2112023077a79434f3accd40ed88daf037de07e929fd7d4c239913cfa7b63fb2231942042a30d7fa9dbf7f52f8d7856abce33124"
+   "sig": ""
   },
   {
    "keyid": "f2149d8b7c1ece56d87d81f27fa68b745efc841892b3acfa382ad7f611e612ec",
-   "sig": "3066023100d843d676565cc05c8f42c1aba095dba0750689f9d32fd34a5bf25d2761f2175236d72302c5b804ad7e842543a274d71e023100ba81d6c6c59be35d753706af760d9a786d0a21197521ad15e2119207b5a0facf33e692760efb9ce26fd572a8d3453e72"
+   "sig": ""
   },
   {
    "keyid": "7f4720651538fe96ce3067befcea395eccd49aa1a509568122eaadb300b0f880",
@@ -26,15 +26,22 @@
   },
   {
    "keyid": "da52a1fb41a0a1f71cba47032f1074a4dc380aef4f3c53553a95ce54e60942ee",
-   "sig": "3065023100edbda1558f5c1caa825fd408634c75145babb050c2acf97d5a5ede958fafbd588cca306739480cfbaf10c99ceaed564e0230391470ac885eb7e66f1d3fc188ad131cebb9310e68f63897d59029e7190ddfaa6b02c946b2ff1edd22bb2bb7c6f8d06d"
+   "sig": ""
   }
  ],
  "signed": {
   "_type": "targets",
-  "expires": "2025-09-11T12:48:14Z",
+  "expires": "2025-09-19T03:39:39Z",
   "spec_version": "1.0.31",
-  "targets": {},
-  "version": 1,
+  "targets": {
+   "testing/rekor/c0d23d6ad406973f9559f3ba2d1ca01f84147d8ffc5b8445c224f98b9591801d.pem": {
+    "hashes": {
+     "sha256": "dce5ef715502ec9f3cdfd11f8cc384b31a6141023d3e7595e9908a81cb6241bd"
+    },
+    "length": 178
+   }
+  },
+  "version": 2,
   "x-tuf-on-ci-expiry-period": 365,
   "x-tuf-on-ci-signing-period": 60
  }
