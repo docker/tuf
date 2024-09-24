@@ -6,11 +6,11 @@
   },
   {
    "keyid": "2ff207ae7d7b595ef69589622067ef5b6668e1a43081377d942ed8749fa919b4",
-   "sig": "306602310091632dd31541091a7e13988655e9cb43395c467d8dd1fba8e02be81bbccc31833a64c2d8f253fa2ec5ad4f58f912d6ba023100e6af3d0f5c48bb8685ddaf945ba528ebc5046388820d0b8012d09f07a4ec25c46cce9701cbbc6421afa42529178c17ab"
+   "sig": ""
   },
   {
    "keyid": "6132f1f2dd14bf3e9ba1a8df4c8435a77d2fd57f4a99bbb699ae61f85907818e",
-   "sig": "306402305d222d79687aa2288920d8e3ad0336a93fe83c3598dd004953a6f4f352c025f9de0d08e97e6e2c09600f471639388f5c0230535a9e97be32733319f7303fca2ee34b950849ff5e2e0feddd9fc04068439a9f99c99739e3c918f0e65756bf17ef7ce4"
+   "sig": ""
   },
   {
    "keyid": "cda750ab29ce33e19ad2fdee4204ad0190b0a33f79e1c5c18a38992d576143d7",
@@ -138,23 +138,10 @@
     }
    ]
   },
-  "expires": "2025-09-20T11:13:52Z",
+  "expires": "2025-09-24T09:07:35Z",
   "spec_version": "1.0.31",
-  "targets": {
-   "mapping.yaml": {
-    "hashes": {
-     "sha256": "5b10a0858bf3446c4650abb938d989e4400f738400a626cba01b04eef1e6985b"
-    },
-    "length": 398
-   },
-   "version-constraints": {
-    "hashes": {
-     "sha256": "be976ac935d635fb38588d36cbd9cf159ed1a0176779737c687439b567e609b0"
-    },
-    "length": 12
-   }
-  },
-  "version": 7,
+  "targets": {},
+  "version": 8,
   "x-tuf-on-ci-expiry-period": 365,
   "x-tuf-on-ci-signing-period": 60
  }
