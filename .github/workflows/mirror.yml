@@ -16,10 +16,10 @@ jobs:
       - name: Login to Docker Hub
         uses: docker/login-action@v3
         with:
-          username: dockerpublicbot
-          password: ${{ secrets.DOCKERPUBLICBOT_WRITE_PAT }}
+          username: docker
+          password: ${{ secrets.TUF_OAT }}
       - name: Mirror metadata
-        uses: docker/go-tuf-mirror/actions/metadata@7e98aaf32ebccc7415882c0365908ed86cdeaf9e # v0.2.0
+        uses: docker/go-tuf-mirror/actions/metadata@d392a4734004d00e38915195f79fd0f43a37bb7f # v0.2.6
         with:
           targets: https://docker.github.io/tuf/targets
           source: https://docker.github.io/tuf/metadata
@@ -27,7 +27,7 @@ jobs:
           tuf-root: prod
           flags: "-f"
       - name: Mirror targets
-        uses: docker/go-tuf-mirror/actions/targets@7e98aaf32ebccc7415882c0365908ed86cdeaf9e # v0.2.0
+        uses: docker/go-tuf-mirror/actions/targets@d392a4734004d00e38915195f79fd0f43a37bb7f # v0.2.6
         with:
           metadata: https://docker.github.io/tuf/metadata
           source: https://docker.github.io/tuf/targets
