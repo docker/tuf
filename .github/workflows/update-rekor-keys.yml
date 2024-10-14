@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
   # also run daily
   schedule:
-    - cron: '37 3 * * *'
+    - cron: "37 3 * * *"
 jobs:
   update-rekor-keys:
     runs-on: ubuntu-latest
@@ -44,3 +44,35 @@ jobs:
           git add targets
           git commit -m "[BOT] Update Rekor public keys" || exit 0
           git push origin sign/update-rekor-keys-${{ github.run_number }}
+  failure-notification:
+    runs-on: ubuntu-latest
+    needs: [update-rekor-keys]
+    if: ${{ always() && contains(needs.*.result, 'failure') }}
+    steps:
+      - name: Slack Notification
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_COLOR: failure
+          MSG_MINIMAL: true
+          SLACK_TITLE: "${{ github.workflow }} - Failure"
+          SLACK_MESSAGE: "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          SLACK_FOOTER: "triggered by ${{ github.repository }}"
+      - name: PagerDuty Alert
+        env:
+          PAGERDUTY_KEY: ${{ secrets.PAGERDUTY_KEY }}
+        run: |
+          curl -X POST 'https://events.pagerduty.com/v2/enqueue' \
+          -H 'Content-Type: application/json' \
+          -d '{
+            "routing_key": "'$PAGERDUTY_KEY'",
+            "event_action": "trigger",
+            "payload": {
+              "summary": "${{ github.workflow }} - Failure",
+              "severity": "critical",
+              "source": "${{ github.server_url }}/${{ github.repository }}",
+              "custom_details": {
+                "workflow_run": "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+              }
+            }
+          }'
