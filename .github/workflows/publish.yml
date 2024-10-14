@@ -76,3 +76,21 @@ jobs:
           SLACK_TITLE: "${{ github.workflow }} - Failure"
           SLACK_MESSAGE: "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
           SLACK_FOOTER: "triggered by ${{ github.repository }}"
+      - name: PagerDuty Alert
+        env:
+          PAGERDUTY_KEY: ${{ secrets.PAGERDUTY_KEY }}
+        run: |
+          curl -X POST 'https://events.pagerduty.com/v2/enqueue' \
+          -H 'Content-Type: application/json' \
+          -d '{
+            "routing_key": "'$PAGERDUTY_KEY'",
+            "event_action": "trigger",
+            "payload": {
+              "summary": "${{ github.workflow }} - Failure",
+              "severity": "critical",
+              "source": "${{ github.server_url }}/${{ github.repository }}",
+              "custom_details": {
+                "workflow_run": "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+              }
+            }
+          }'
