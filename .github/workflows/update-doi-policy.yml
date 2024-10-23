@@ -10,13 +10,6 @@ jobs:
     steps:
       - run: git config --global core.autocrlf false
       - name: Generate GitHub App Token
-        id: ro-token
-        uses: actions/create-github-app-token@31c86eb3b33c9b601a1f60f98dcbfd1d70f379b4 # v1.10.3
-        with:
-          app-id: ${{ vars.DOCKER_READ_APP_ID }}
-          private-key: ${{ secrets.DOCKER_READ_APP_PRIVATE_KEY }}
-          repositories: "doi-image-policy"
-      - name: Generate GitHub App Token
         id: rw-token
         uses: actions/create-github-app-token@31c86eb3b33c9b601a1f60f98dcbfd1d70f379b4 # v1.10.3
         with:
@@ -24,7 +17,6 @@ jobs:
           private-key: ${{ secrets.APP_PRIVATE_KEY }}
       - id: doi-image-policy-release
         run: |
-          export GH_TOKEN=${{ steps.ro-token.outputs.token }}
           RESULT=$(gh release view -R docker/doi-image-policy --json tagName,body)
           TAG_NAME=$(echo $RESULT | jq -r .tagName)
           BODY=$(echo $RESULT | jq -r .body)
@@ -39,7 +31,6 @@ jobs:
         with:
           repository: "docker/doi-image-policy"
           ref: ${{ steps.doi-image-policy-release.outputs.release }}
-          token: ${{ steps.ro-token.outputs.token }}
           path: doi-image-policy
       - name: Checkout tuf
         uses: actions/checkout@v4
